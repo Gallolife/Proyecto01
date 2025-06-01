@@ -1,11 +1,89 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prueba 01</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WATCHEDES</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    
+
+  <button id="goBack" class="modern-home-btn">🏠 Inicio</button>
+
+  <!-- Fondo de partículas -->
+  <div id="particles-js"></div>
+
+  <!-- Menú principal -->
+  <div id="mainMenu">
+    <h1>WATCHEDES</h1>
+    <div class="background-upload">
+  <label for="backgroundInput">🎨 Cambiar fondo</label>
+  <input type="file" id="backgroundInput" accept="image/*" />
+</div>
+
+
+
+
+    <div class="search-container">
+      <div class="search-wrapper">
+        <i class="search-icon">🔍</i>
+        <input type="text" id="search" placeholder="Buscar anime...">
+      </div>
+      <button id="searchBtn">Buscar</button>
+    </div>
+
+    <!-- Secciones horizontales -->
+    <div class="section-row">
+      <div class="section-card" data-section="viendo"><h2>Viendo</h2></div>
+      <div class="section-card" data-section="pendiente"><h2>Pendiente</h2></div>
+      <div class="section-card" data-section="visto"><h2>Visto</h2></div>
+    </div>
+  </div>
+
+  <!-- Resultados de búsqueda -->
+  <div id="results" class="anime-grid hidden"></div>
+
+  <!-- Sección Viendo -->
+  <section id="viendoSection" class="section hidden">
+    <h2>Viendo</h2>
+    <button id="vaciar-viendo" class="vaciar-btn">Vaciar sección</button>
+    <div id="viendoContainer" class="anime-container"></div>
+  </section>
+
+  <!-- Sección Pendiente -->
+  <section id="pendienteSection" class="section hidden">
+    <h2>Pendiente</h2>
+    <button id="vaciar-pendiente" class="vaciar-btn">Vaciar sección</button>
+    <div id="pendienteContainer" class="anime-container"></div>
+  </section>
+
+  <!-- Sección Visto -->
+  <section id="vistoSection" class="section hidden">
+    <h2>Visto</h2>
+    <button id="vaciar-visto" class="vaciar-btn">Vaciar sección</button>
+    <div id="vistoContainer" class="anime-container"></div>
+  </section>
+
+  <!-- Modal de detalles -->
+  <div id="modal" class="modal hidden">
+    <button id="closeModal">Cerrar</button>
+    <h2 id="modalTitle"></h2>
+    <img id="modalImage" />
+    <p id="modalSynopsis"></p>
+    <p>Tipo: <span id="modalType"></span></p>
+    <p>Estado: <span id="modalStatus"></span></p>
+    <p>Episodios: <span id="modalEpisodes"></span></p>
+  </div>
+
+  <!-- Partículas -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+  <script>
+    particlesJS.load('particles-js', 'particles.json', function () {
+      console.log('✨ Partículas cargadas');
+    });
+  </script>
+
+  <!-- Tu script principal -->
+  <script src="app.js"></script>
 </body>
 </html>
